@@ -28,4 +28,4 @@ json_data = {
 }
 
 response = requests.post('https://glados.rocks/api/user/checkin', cookies=cookies, headers=headers, json=json_data)
-print(response.json()['message])
+print(response.json()['message'])
