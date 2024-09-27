@@ -26,4 +26,4 @@ jobs:
       - name: 开始
         run: |
           pip3 install requests
-          python3 main.py glados.py
+          python3 glados.py
