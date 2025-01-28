@@ -2,7 +2,7 @@ name: Glados
 
 on:
   schedule:
-    - cron: '47 0 * * *'
+    - cron: '3 0 * * *'
   watch:
     types: started
   workflow_dispatch:
