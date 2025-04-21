@@ -2,19 +2,24 @@ name: Glados
 
 on:
   schedule:
-    - cron: '24 0 * * *' # 每天早上 8 点 UTC 时间，可能需要根据你的时区调整
+    - cron: '24 0 * * *'
+  watch:
+    types: started
   workflow_dispatch:
 
 jobs:
-  update-readme:
+  build:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Checkout codes
+        uses: actions/checkout@v2
+          
+      - name: 初始化Python
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
-
-      - name: Commit and push changes
+          python-version: 3.8
+          
+      - name: 开始
         run: |
-          python glados.py
+          pip3 install requests
+          python3 glados.py
