@@ -21,6 +21,10 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36',
 }
 
-response = requests.get('https://glados.rocks/api/user/checkin', headers=headers, cookies=cookies)
+json_data = {
+    'token': 'glados.one',
+}
+
+response = requests.post('https://glados.rocks/api/user/checkin', cookies=cookies, headers=headers, json=json_data)
 
 print(response.text)
